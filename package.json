@@ -1,0 +1,46 @@
+{
+  "name": "resume-template",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:wechat": "megalo-cli-service build",
+    "build:alipay": "megalo-cli-service build --platform alipay",
+    "build:swan": "megalo-cli-service build --platform swan",
+    "build:toutiao": "megalo-cli-service build --platform toutiao",
+    "dev:alipay": "megalo-cli-service serve --platform alipay",
+    "dev:swan": "megalo-cli-service serve --platform swan",
+    "dev:wechat": "megalo-cli-service serve",
+    "dev:toutiao": "megalo-cli-service serve --platform toutiao",
+    "lint": "megalo-cli-service lint"
+  },
+  "license": "ISC",
+  "babel": {
+    "presets": [
+      "@megalo/app"
+    ]
+  },
+  "devDependencies": {
+    "@megalo/babel-preset-app": "latest",
+    "@megalo/cli-plugin-eslint": "latest",
+    "@megalo/cli-plugin-typescript": "latest",
+    "@megalo/cli-service": "latest",
+    "@megalo/eslint-config-standard": "latest",
+    "@megalo/eslint-config-typescript": "latest",
+    "@megalo/target": "latest",
+    "@megalo/template-compiler": "latest",
+    "@types/node": "^11.11.4",
+    "miniprogram-api-typings": "latest",
+    "eslint": "^5.15.3",
+    "node-sass": "^4.10.0",
+    "sass-loader": "^7.1.0",
+    "typescript": "^3.4.4"
+  },
+  "dependencies": {
+    "@megalo/vhtml-plugin": "latest",
+    "megalo": "latest",
+    "octoparse": "^0.4.2",
+    "vuex": "^3.1.0",
+    "vuex-class": "^0.3.2",
+    "vue-property-decorator": "8.1.1"
+  }
+}

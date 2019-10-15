@@ -1,3 +1,9 @@
+/* eslint-disable no-param-reassign */
+const path = require('path')
+
+function resolve (dir) {
+  return path.join(__dirname, dir)
+}
 module.exports = {
   // 构件生产模式时是否生成source map（仅在process.env.NODE_ENV === 'production' 时该选项生效）
   productionSourceMap: false,
@@ -11,6 +17,9 @@ module.exports = {
     return config
   },
   chainWebpack: chainConfig => {
+    chainConfig.resolve.alias
+      .set('@', resolve('src'))
+      .set('@cain', resolve('src/components/cain/'))
     // 你可以在这里通过 https://github.com/neutrinojs/webpack-chain 来精细的修改webpack配置
     // console.log('chainWebpack执行了', chainConfig.toString())
   },

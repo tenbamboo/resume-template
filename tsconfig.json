@@ -17,6 +17,9 @@
       ],
       "@/*": [
         "src/*"
+      ],
+      "@cain": [
+        "src/components/cain/index.js"
       ]
     },
     "allowJs": true,

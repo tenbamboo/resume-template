@@ -1,12 +1,27 @@
 <template>
   <div class="originOneContainer">
     <banner :baseInfo="baseInfo.baseInfo" />
+
     <about-me :baseInfo="baseInfo.baseInfo" />
+
     <certificate :certificateList="baseInfo.certificateList" />
+
     <accordion-list :list="baseInfo.workList"
       :title="'工作经验'" />
+
     <accordion-list :list="baseInfo.otherWork"
       :title="'其他作品'" />
+
+    <skill-list :skillList="baseInfo.skillList" />
+
+    <star-list :starList="baseInfo.starList" />
+
+    <contact-list  :baseInfo="baseInfo.baseInfo" :isShowContact="baseInfo.isShowContact" />
+
+    <thanks />
+
+    <power-by/>
+
   </div>
 </template>
 
@@ -15,6 +30,11 @@ import Banner from './components/banner.vue'
 import AboutMe from './components/aboutMe.vue'
 import Certificate from './components/certificate.vue'
 import AccordionList from './components/accordionList.vue'
+import SkillList from './components/skillList.vue'
+import StarList from './components/starList.vue'
+import ContactList from './components/contactList.vue'
+import Thanks from './components/thanks.vue'
+import PowerBy from './components/powerBy.vue'
 
 import { Vue, Component } from 'vue-property-decorator'
 
@@ -23,7 +43,12 @@ import { Vue, Component } from 'vue-property-decorator'
     Banner,
     AboutMe,
     Certificate,
-    AccordionList
+    AccordionList,
+    SkillList,
+    StarList,
+    ContactList,
+    Thanks,
+    PowerBy
   }
 })
 export default class My extends Vue {
@@ -344,8 +369,6 @@ export default class My extends Vue {
       }
     ]
   };
-  logo =
-    'https://user-images.githubusercontent.com/20720117/48262986-80e02780-e45f-11e8-8426-2872916adad9.png';
   color = '#007d37';
   acc = 'hello bigMeow';
 
@@ -407,7 +430,6 @@ export default class My extends Vue {
   & /deep/.area {
     padding: 10px;
     color: #000;
-    margin-top: 10px;
     & > .title {
       padding-bottom: 10px;
       border-bottom: 1px solid #3d3b3b;

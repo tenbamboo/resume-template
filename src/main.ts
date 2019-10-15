@@ -36,30 +36,6 @@ export default {
       // 'pages/my/my',
       // 'pages/vuex/vuex'
     ],
-    // tabBar: {
-    //   color: '#333',
-    //   selectedColor: '#007d37',
-    //   list: [
-    //     {
-    //       pagePath: 'pages/hello',
-    //       text: 'home',
-    //       iconPath: 'native/tabbar/home.png',
-    //       selectedIconPath: 'native/tabbar/home_on.png'
-    //     },
-    //     {
-    //       pagePath: 'pages/my/my',
-    //       text: 'my',
-    //       iconPath: 'native/tabbar/mine.png',
-    //       selectedIconPath: 'native/tabbar/mine_on.png'
-    //     },
-    //     {
-    //       pagePath: 'pages/vuex/vuex',
-    //       text: 'vuex',
-    //       iconPath: 'native/tabbar/vue.png',
-    //       selectedIconPath: 'native/tabbar/vue_on.png'
-    //     }
-    //   ]
-    // },
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#303538',

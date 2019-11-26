@@ -1,0 +1,46 @@
+
+
+.cardContainer{
+    margin:10px 10px 30px 10px;
+    border-radius: 6px;
+    box-shadow: 3px 5px 8px  rgba(80, 179, 255, 0.5);
+    border:1px solid rgba(80, 179, 255, 0.2);
+    .cardTitle{
+        padding:10px 10px 0 10px;
+        color:#50b3ff;
+        font-size:16px;
+        font-weight: 900;
+        position: sticky;
+        top: 0px;
+        background-color: #fff;
+        z-index: 100;
+        &::after {
+            content: " ";
+            display:block;
+            margin:10px 0px;
+            height: 4px;
+            background-image: linear-gradient(101deg, #50b3ff 24%, #84d043 96%);
+            border-radius:6px;
+        }
+        // background-image: linear-gradient(63deg, #21D4FD 16%, #c05def 83%);
+    }
+    .cardBody{
+        padding:10px;
+    }
+}
+.iconArea {
+    margin-bottom: 10px;
+    img {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+      margin-right: 10px;
+      display: inline-block;
+    }
+}
+.fontBold {
+    font-weight: 900;
+}
+.link {
+    color: #4395ff;
+}

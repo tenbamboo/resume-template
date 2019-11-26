@@ -396,19 +396,19 @@ export default {
   // validatorAlert (value, model, errorMsg) {
   //   return this.validatorAction(value, model, errorMsg, 'alert')
   // },
-  // /**
-  //      * @function getUUID
-  //      * @memberof Cain
-  //      * @public
-  //      * @todo 生成UUID
-  //      */
-  // getUUID: function () {
-  //   this.getUUID.random4 = function () {
-  //     return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1)
-  //   }
+  /**
+       * @function getUUID
+       * @memberof Cain
+       * @public
+       * @todo 生成UUID
+       */
+  getUUID: function () {
+    this.getUUID.random4 = function () {
+      return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1)
+    }
 
-  //   return (this.getUUID.random4() + this.getUUID.random4() + '-' + this.getUUID.random4() + '-' + this.getUUID.random4() + '-' + this.getUUID.random4() + '-' + this.getUUID.random4() + this.getUUID.random4() + this.getUUID.random4())
-  // },
+    return (this.getUUID.random4() + this.getUUID.random4() + '-' + this.getUUID.random4() + '-' + this.getUUID.random4() + '-' + this.getUUID.random4() + '-' + this.getUUID.random4() + this.getUUID.random4() + this.getUUID.random4())
+  },
   // /**
   //      * @public
   //      * @function

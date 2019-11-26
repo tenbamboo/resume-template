@@ -39,8 +39,9 @@
     "@megalo/vhtml-plugin": "latest",
     "megalo": "latest",
     "octoparse": "^0.4.2",
+    "vant-weapp": "^0.5.23",
+    "vue-property-decorator": "8.1.1",
     "vuex": "^3.1.0",
-    "vuex-class": "^0.3.2",
-    "vue-property-decorator": "8.1.1"
+    "vuex-class": "^0.3.2"
   }
 }

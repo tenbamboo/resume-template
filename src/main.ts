@@ -32,10 +32,15 @@ export default {
   config: {
     // pages 的首个页面会被编译成首页
     pages: [
+      'pages/summer/index',
       'pages/originOne/index'
       // 'pages/my/my',
       // 'pages/vuex/vuex'
     ],
+    usingComponents: {
+      // 'van-progress': 'native/vant/progress/index'
+      // 'van-button': 'native/vant/button/index'
+    },
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#303538',

@@ -25,6 +25,15 @@
   </div>
 </template>
 
+<config>
+{
+  "navigationBarBackgroundColor": "#303538",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "Test",
+  "backgroundColor": "#303538"
+}
+</config>
+
 <script lang="ts">
 import baseInfoJson from '@/components/haze.liu.js'
 import Banner from './components/banner.vue'
@@ -35,7 +44,7 @@ import SkillList from './components/skillList.vue'
 import StarList from './components/starList.vue'
 import ContactList from './components/contactList.vue'
 import Thanks from './components/thanks.vue'
-import PowerBy from './components/powerBy.vue'
+import PowerBy from '@/pages/common/components/powerBy.vue'
 
 import { Vue, Component } from 'vue-property-decorator'
 

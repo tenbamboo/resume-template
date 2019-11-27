@@ -8,6 +8,6 @@ declare module '*.vue' {
 
 declare module 'megalo/types/vue' {
   interface Vue {
-    $mp: any
+    $mp: any,
   }
 }

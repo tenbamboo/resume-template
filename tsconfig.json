@@ -19,7 +19,7 @@
         "src/*"
       ],
       "@cain": [
-        "src/components/cain/index.js"
+        "src/components/cain/index.ts"
       ],
     },
     "allowJs": true,

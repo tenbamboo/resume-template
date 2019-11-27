@@ -1,9 +1,13 @@
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
+import { Mutation, namespace } from 'vuex-class'
+
+const base = namespace('base')
 
 declare module 'megalo/types/vue' {
   interface Vue {
-    $mp: any
+    $mp: any;
+    $staticUrl: string;
   }
 }
 
@@ -21,9 +25,16 @@ Component.registerHooks([
   mpType: 'app'
 } as any)
 class App extends Vue {
+  @base.Mutation('setStaticUrl') setStaticUrl
+
   onLaunch (options) {
+    // 设置静态资源URL信息
+    this.setStaticUrl(process.env.VUE_APP_STATIC_HOST)
     // Do something initial when launch.
-    console.log('App onLaunch, env文件自定义的环境变量VUE_APP_TEST值:', process.env.VUE_APP_TEST)
+    console.log(
+      'App onLaunch, env文件自定义的环境变量VUE_APP_TEST值:',
+      process.env.VUE_APP_TEST
+    )
   }
 
   onShow (options) {

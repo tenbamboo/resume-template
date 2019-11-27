@@ -1,8 +1,8 @@
 import Vuex from 'vuex'
-import counter from './counter'
+import base from './base'
 
 export default new Vuex.Store({
   modules: {
-    counter
+    base
   }
 })

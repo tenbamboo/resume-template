@@ -3,6 +3,7 @@ import Vue from 'vue'
 import { Component } from 'vue-property-decorator'
 import VHtmlPlugin from '@megalo/vhtml-plugin'
 import Vuex from 'vuex'
+import CainRouter from '@/components/cain/cain.router'
 
 Vue.use(VHtmlPlugin)
 Vue.use(Vuex)
@@ -25,17 +26,34 @@ Component.registerHooks([
 ])
 
 const app = new Vue(App)
+app.$staticUrl = process.env.VUE_APP_STATIC_HOST + ''
 
 app.$mount()
+
+const page = [
+  {
+    url: '/resume/index',
+    component: '/pages/resume/index',
+    indexPage: true
+  },
+  {
+    url: '/resume/summer',
+    component: '/pages/resume/summer/index'
+  },
+  {
+    url: '/resume/originOne',
+    component: '/pages/resume/originOne/index'
+  }
+]
+CainRouter.formatePages(page)
 
 export default {
   config: {
     // pages 的首个页面会被编译成首页
     pages: [
-      'pages/summer/index',
-      'pages/originOne/index'
-      // 'pages/my/my',
-      // 'pages/vuex/vuex'
+      'pages/resume/index',
+      'pages/resume/summer/index',
+      'pages/resume/originOne/index'
     ],
     usingComponents: {
       // 'van-progress': 'native/vant/progress/index'

@@ -26,7 +26,6 @@ Component.registerHooks([
 ])
 
 const app = new Vue(App)
-app.$staticUrl = process.env.VUE_APP_STATIC_HOST + ''
 
 app.$mount()
 
@@ -43,6 +42,10 @@ const page = [
   {
     url: '/resume/originOne',
     component: '/pages/resume/originOne/index'
+  },
+  {
+    url: '/index',
+    component: '/pages/index'
   }
 ]
 CainRouter.formatePages(page)
@@ -51,6 +54,7 @@ export default {
   config: {
     // pages 的首个页面会被编译成首页
     pages: [
+      'pages/index',
       'pages/resume/index',
       'pages/resume/summer/index',
       'pages/resume/originOne/index'

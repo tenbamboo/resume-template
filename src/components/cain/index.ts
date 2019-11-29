@@ -18,7 +18,7 @@ export default {
        * @param {Object} param.query 传递的参数
        * @param {Boolean} param.autoAppend 是否自动补全信息（直接再路径中补全/main） 默认为true
        */
-  navigateTo (url: string, param: any) {
+  navigateTo (url: string, param?: any) {
     // if (typeof param === 'string') {
     // url = param + '/main'
     let res: any = CainRouter.getPageInfo(url)
@@ -1037,25 +1037,32 @@ export default {
   //       }
   //     })
   //   },
-  //   /**
-  //   * @public
-  //   * @function
-  //   * @todo 获取设备信息 For wx
-  //   * @memberof Cain
-  //   * @return  promise对象
-  //   */
-  //   getSystemInfo () {
-  //     return new Promise(async (resolve, reject) => {
-  //       wx.getSystemInfo({
-  //         success: function (res) {
-  //           resolve(res)
-  //         },
-  //         fail (e) {
-  //           reject(e)
-  //         }
-  //       })
-  //     })
-  //   },
+  selectorQuery (selector:string, fields:any):any {
+    return new Promise(async (resolve) => {
+      wx.createSelectorQuery().select(selector).fields(fields).exec(res => {
+        resolve(res)
+      })
+    })
+  },
+  /**
+    * @public
+    * @function
+    * @todo 获取设备信息 For wx
+    * @memberof Cain
+    * @return  promise对象
+  */
+  getSystemInfo () {
+    return new Promise(async (resolve, reject) => {
+      wx.getSystemInfo({
+        success: function (res) {
+          resolve(res)
+        },
+        fail (e) {
+          reject(e)
+        }
+      })
+    })
+  },
   //   /**
   //   * @public
   //   * @function

@@ -47,7 +47,7 @@
 {
   "navigationBarBackgroundColor": "#303538",
   "navigationBarTextStyle": "white",
-  "navigationBarTitleText": "Test",
+  "navigationBarTitleText": "StarCv",
   "backgroundColor": "#303538"
 }
 </config>
@@ -62,7 +62,7 @@ import SkillList from './components/skillList.vue'
 import StarList from './components/starList.vue'
 import ContactList from './components/contactList.vue'
 import Thanks from './components/thanks.vue'
-import PowerBy from '@/pages/common/components/powerBy.vue'
+import PowerBy from '@/components/powerBy.vue'
 import BaseInfoMixins from '@/pages/common/mixins/baseInfoMixins.ts'
 
 import { Vue, Component, Mixins } from 'vue-property-decorator'

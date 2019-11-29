@@ -1,17 +1,18 @@
 <template>
-  <div class="winterContainer">
+  <div class="resumeIndexContainer">
     hello would
     <p @click="gotoPage('summer','haze.liu.new')">summerHaze</p>
     <p @click="gotoPage('originOne','haze.liu.new')">originOneHaze</p>
     <p @click="gotoPage('summer','damao')">summerDamao</p>
     <p @click="gotoPage('originOne','damao')">originOneDamao</p>
+     <p @click="gotoIndex">index</p>
   </div>
 </template>
 <config>
 {
   "navigationBarBackgroundColor": "#e7fafe",
   "navigationBarTextStyle": "black",
-  "navigationBarTitleText": "Test",
+  "navigationBarTitleText": "StarCv",
   "backgroundColor": "#e7fafe",
 }
 </config>
@@ -81,6 +82,9 @@ export default class ResumeIndex extends Vue {
   gotoPage (url, name) {
     console.log(url)
     Cain.navigateTo(`/resume/${url}`, { name })
+  }
+  gotoIndex () {
+    Cain.navigateTo(`/index`)
   }
 }
 </script>

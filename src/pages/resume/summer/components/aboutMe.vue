@@ -24,10 +24,10 @@
         <img :src="`${staticUrl}orginOne/icon5.png`" />
         <span>{{baseInfo.location}}</span>
       </div>
-      <span class="iconArea">
+      <div class="iconArea">
         <img :src="`${staticUrl}orginOne/icon6.png`" />
         <span>{{baseInfo.wantPosition}}</span>
-      </span>
+      </div>
       <div class="iconArea">
         <img :src="`${staticUrl}orginOne/icon7.png`" />
         <span>{{baseInfo.salary}}</span>

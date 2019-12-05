@@ -1,12 +1,13 @@
 import { Vue, Component } from 'vue-property-decorator'
-import Cain from '@cain'
+import ResumeService from '@/model/service/ResumeService'
 
 @Component
 export default class BaseInfoMixins extends Vue {
     baseInfo: any = {};
+    resumeService:ResumeService = new ResumeService();
 
     async getData () {
-      this.baseInfo = await Cain.post(`${this.$mp.query.name}.json`)
+      this.baseInfo = await this.resumeService.getResumeByName(this.$mp.query.name)
       wx.setNavigationBarTitle({
         title: `${this.baseInfo.baseInfo.name}的简历`
       })

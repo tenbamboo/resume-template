@@ -1,5 +1,5 @@
 <template>
-  <div class="skyContainer">
+  <div class="skyContainer"  :style="`height: ${windowHeight+1}px;`">
     <div v-for="item in 400"
       :key="item"
       :class="`star star-${item}`"></div>
@@ -11,8 +11,11 @@ import { Vue, Component } from 'vue-property-decorator'
 @Component
 export default class SkyFullOfStars extends Vue {
   async beforeCreate () {}
-
-  created () {}
+  windowHeight:number = 0;
+  created () {
+    const sysInfo = wx.getSystemInfoSync()
+    this.windowHeight = sysInfo.windowHeight
+  }
 
   beforeMount () {}
 
@@ -23,7 +26,6 @@ export default class SkyFullOfStars extends Vue {
 <style lang="scss" scoped>
 .skyContainer {
   width: 100%;
-  height: 750px;
   background-color: #282a3a;
   z-index: -1;
   position: absolute;

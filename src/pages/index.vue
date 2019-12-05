@@ -9,12 +9,15 @@
         <img :src="`${staticUrl}/common/vercode.png`"
           class="icon" />
         <input type="text"
+          v-model="code"
+          confirm-type="go"
+          @confirm="submit"
           placeholder-style="color:#fff"
           placeholder="识别码"
           maxlength="30">
       </div>
       <div class="formItem">
-        <div class="accessBtn">访问</div>
+        <div class="accessBtn" @click="submit">访问</div>
       </div>
     </div>
 
@@ -35,7 +38,8 @@ import { State, namespace } from 'vuex-class'
 import Cain from '@cain'
 
 import SkyFullOfStars from '@/components/skyFullOfStars.vue'
-
+import ResumeService from '@/model/service/ResumeService'
+import ResumeMap from '@/model/dto/ResumeMap'
 const base = namespace('base')
 
 @Component({
@@ -46,31 +50,32 @@ const base = namespace('base')
 export default class ResumeIndex extends Vue {
   @base.State('staticUrl') staticUrl;
 
-  areaV = false;
+  code:string = ''
+
+  resumeService:ResumeService = new ResumeService();
 
   async beforeCreate () {}
 
-  created () {}
+  created () {
+
+  }
 
   beforeMount () {}
 
   mounted () {}
-  // async initCanvas () {
-  //   // const sysInfo = wx.getSystemInfoSync()
-  //   // const res = await Cain.selectorQuery('#canvasBg', {
-  //   //   node: true,
-  //   //   size: true
-  //   // })
-  //   // const canvas = res[0].node
-  //   // this.windowHeight = sysInfo.windowHeight
+  submit2 ($event) {
+    console.log($event)
+  }
 
-  //   // setTimeout(() => {
-  //   //   Starfield.start(canvas, sysInfo)
-  //   // }, 300)
-  //   // setTimeout(() => {
-  //   //   this.areaV = true
-  //   // }, 5000)
-  // }
+  async submit () {
+    const res:ResumeMap = await this.resumeService.getResumeCode(this.code) as ResumeMap
+    if (!res) {
+      Cain.showToastE('未找到识别码')
+      return
+    }
+    Cain.showLoading()
+    Cain.navigateTo(`/resume/${res.theme}`, { name: res.name })
+  }
 }
 </script>
 
@@ -104,17 +109,19 @@ export default class ResumeIndex extends Vue {
         width: 30px;
         height: 30px;
         display: inline-block;
+        line-height:30px;
       }
       .inputPlaceholder {
         color: #fff;
       }
       .accessBtn {
-        width: 70%;
+        width: 100%;
         margin: 40px auto;
         padding: 10px;
-        box-shadow: 0px 0px 10px 2px #babac4;
+        // box-shadow: 0px 0px 10px 2px #babac4;
         border-radius: 20px;
         color: #fff;
+        background-color: #2196F3;
       }
     }
   }

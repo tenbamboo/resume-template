@@ -804,47 +804,47 @@ export default {
 
   //   return this.post('interfaces', param)
   // },
-  // /**
-  // * @public
-  // * @function
-  // * @todo 显示loading For wx
-  // * @memberof Cain
-  // */
-  // showLoading (title = '加载中...') {
-  //   wx.showLoading({
-  //     title,
-  //     mask: true
-  //   })
-  // },
-  // /**
-  // * @public
-  // * @function
-  // * @todo 隐藏loading For wx
-  // * @memberof Cain
-  // */
-  // hideLoading () {
-  //   wx.hideLoading()
-  // },
+  /**
+  * @public
+  * @function
+  * @todo 显示loading For wx
+  * @memberof Cain
+  */
+  showLoading (title:string = '加载中...') {
+    wx.showLoading({
+      title,
+      mask: true
+    })
+  },
+  /**
+  * @public
+  * @function
+  * @todo 隐藏loading For wx
+  * @memberof Cain
+  */
+  hideLoading () {
+    wx.hideLoading()
+  },
   // /**
   // * @public
   // * @function
   // * @todo 显示Toast For wx
   // * @memberof Cain
   // */
-  // showToast (type, message) {
-  //   let p = {}
-  //   if (type === 'success') {
-  //     p.image = '/static/image/cain/success.png'
-  //   } else if (type === 'warn') {
-  //     p.image = '/static/image/cain/warn.png'
-  //   } else if (type === 'error') {
-  //     p.image = '/static/image/cain/error.png'
-  //   }
-  //   p.title = message
-  //   p.duration = 3000
+  showToast (type:string, message:string) {
+    let p:any = {}
+    if (type === 'success') {
+      p.image = '/native/images/cain/success.png'
+    } else if (type === 'warn') {
+      p.image = '/native/images/cain/warn.png'
+    } else if (type === 'error') {
+      p.image = '/native/images/cain/error.png'
+    }
+    p.title = message
+    p.duration = 3000
 
-  //   wx.showToast(p)
-  // },
+    wx.showToast(p)
+  },
   //   /**
   //   * @public
   //   * @function
@@ -863,15 +863,15 @@ export default {
   //   showToastW (message) {
   //     this.showToast('warn', message)
   //   },
-  //   /**
-  //   * @public
-  //   * @function
-  //   * @todo 显示Warn Toast For wx
-  //   * @memberof Cain
-  //   */
-  //   showToastE (message) {
-  //     this.showToast('error', message)
-  //   },
+  /**
+    * @public
+    * @function
+    * @todo 显示Warn Toast For wx
+    * @memberof Cain
+    */
+  showToastE (message:string) {
+    this.showToast('error', message)
+  },
   //   /**
   //   * @public
   //   * @function

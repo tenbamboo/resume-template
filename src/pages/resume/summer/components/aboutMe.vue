@@ -18,7 +18,7 @@
       </div>
       <div class="iconArea">
         <img :src="`${staticUrl}orginOne/icon4.png`" />
-        <span>{{baseInfo.workAge}} (工作年限)</span>
+        <span>{{baseInfo.firstWorkYear | workAgeFilter}} (工作年限)</span>
       </div>
       <div class="iconArea">
         <img :src="`${staticUrl}orginOne/icon5.png`" />
@@ -28,7 +28,7 @@
         <img :src="`${staticUrl}orginOne/icon6.png`" />
         <span>{{baseInfo.wantPosition}}</span>
       </div>
-      <div class="iconArea">
+      <div class="iconArea"  v-if="baseInfo.isShowSalary">
         <img :src="`${staticUrl}orginOne/icon7.png`" />
         <span>{{baseInfo.salary}}</span>
       </div>
@@ -40,9 +40,14 @@
 <script lang="ts">
 import { Vue, Prop, Component } from 'vue-property-decorator'
 import { State, namespace } from 'vuex-class'
+import { workAgeFilter } from '@/pages/filters/index'
 const base = namespace('base')
 
-@Component
+@Component({
+  filters: {
+    workAgeFilter
+  }
+})
 export default class AboutMe extends Vue {
   @Prop(Object) baseInfo;
   @base.State('staticUrl') staticUrl;

@@ -5,7 +5,7 @@
     <p @click="gotoPage('originOne','haze.liu.new')">originOneHaze</p>
     <p @click="gotoPage('summer','damao')">summerDamao</p>
     <p @click="gotoPage('originOne','damao')">originOneDamao</p>
-     <p @click="gotoIndex">index</p>
+    <p @click="gotoIndex">index</p>
   </div>
 </template>
 <config>

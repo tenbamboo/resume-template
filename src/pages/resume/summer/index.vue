@@ -60,7 +60,7 @@ import StarList from './components/starList.vue'
 import ContactList from './components/contactList.vue'
 import Thanks from './components/thanks.vue'
 import PowerBy from '@/components/powerBy.vue'
-import BaseInfoMixins from '@/pages/common/mixins/baseInfoMixins.ts'
+import BaseInfoMixins from '@/pages/resume/mixins/baseInfoMixins.ts'
 
 import { Vue, Component, Mixins } from 'vue-property-decorator'
 

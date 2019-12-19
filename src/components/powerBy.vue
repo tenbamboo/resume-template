@@ -1,8 +1,8 @@
 <template>
   <div class="powerByContainer ">
-    Powered By
-    <span class="link"
-      @click="setClipboard('https://github.com/tenbamboo/resume-template')">GitHub : @tenbamboo</span>
+    <span class="link" @click="gotoAbout">— 关于 —</span>
+    <!-- <span class="link"
+      @click="setClipboard('https://github.com/tenbamboo/resume-template')"> @tenbamboo</span> -->
   </div>
 </template>
 
@@ -12,9 +12,8 @@ import Cain from '@/components/cain/'
 
 @Component
 export default class PowerBy extends Vue {
-  // 设置剪切板内容
-  setClipboard (val) {
-    Cain.setClipboard(val)
+  gotoAbout () {
+    Cain.navigateTo(`/about`)
   }
 }
 </script>

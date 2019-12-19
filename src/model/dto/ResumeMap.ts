@@ -1,7 +1,7 @@
 /**
  * 简历映射信息
  *
- * @class AccordionItem
+ * @class ResumeMap
  * @date 2019-05-30 15:48:39
  */
 class ResumeMap {

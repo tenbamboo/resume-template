@@ -24,6 +24,10 @@ class ResumeService {
   getResumeByName (name: string) {
     return Cain.post(`service/resume/${name}.json`)
   }
+  // 获取模板列表信息
+  getTemplateList () {
+    return Cain.post(`service/templateList.json`)
+  }
 }
 
 export default ResumeService

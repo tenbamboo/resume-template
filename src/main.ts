@@ -30,23 +30,38 @@ const app = new Vue(App)
 app.$mount()
 
 const page = [
+  // 简历跳转主页
   {
     url: '/resume/index',
     component: '/pages/resume/index',
     indexPage: true
   },
+  // summer简历主页
   {
     url: '/resume/summer',
     component: '/pages/resume/summer/index'
   },
+  // orginOne简历主页
   {
     url: '/resume/originOne',
     component: '/pages/resume/originOne/index'
   },
+  // 主页
   {
     url: '/index',
     component: '/pages/index'
+  },
+  // 关于
+  {
+    url: '/about',
+    component: '/pages/common/about'
+  },
+  // 简历模板列表
+  {
+    url: '/templateList',
+    component: '/pages/common/templateList'
   }
+
 ]
 CainRouter.formatePages(page)
 
@@ -54,10 +69,12 @@ export default {
   config: {
     // pages 的首个页面会被编译成首页
     pages: [
-      'pages/index',
-      'pages/resume/index',
-      'pages/resume/summer/index',
-      'pages/resume/originOne/index'
+      'pages/index', // 主页
+      'pages/common/templateList', // 简历模板列表
+      'pages/common/about', // 关于
+      'pages/resume/index', // 简历跳转主页
+      'pages/resume/summer/index', // summer简历主页
+      'pages/resume/originOne/index' // orginOne简历主页
     ],
     usingComponents: {
       // 'van-progress': 'native/vant/progress/index'

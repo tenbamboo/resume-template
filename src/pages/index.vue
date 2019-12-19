@@ -20,14 +20,14 @@
         <div class="accessBtn" @click="submit">访问</div>
       </div>
     </div>
-
+    <power-by />
   </div>
 </template>
 <config>
 {
   "navigationBarBackgroundColor": "#282a3a",
   "navigationBarTextStyle": "white",
-  "navigationBarTitleText": "Test",
+  "navigationBarTitleText": "星选简历",
   "backgroundColor": "#282a3a",
 }
 </config>
@@ -38,13 +38,15 @@ import { State, namespace } from 'vuex-class'
 import Cain from '@cain'
 
 import SkyFullOfStars from '@/components/skyFullOfStars.vue'
+import PowerBy from '@/components/powerBy.vue'
 import ResumeService from '@/model/service/ResumeService'
 import ResumeMap from '@/model/dto/ResumeMap'
 const base = namespace('base')
 
 @Component({
   components: {
-    SkyFullOfStars
+    SkyFullOfStars,
+    PowerBy
   }
 })
 export default class ResumeIndex extends Vue {
@@ -53,19 +55,6 @@ export default class ResumeIndex extends Vue {
   code:string = ''
 
   resumeService:ResumeService = new ResumeService();
-
-  async beforeCreate () {}
-
-  created () {
-
-  }
-
-  beforeMount () {}
-
-  mounted () {}
-  submit2 ($event) {
-    console.log($event)
-  }
 
   async submit () {
     const res:ResumeMap = await this.resumeService.getResumeCode(this.code) as ResumeMap
@@ -103,13 +92,13 @@ export default class ResumeIndex extends Vue {
         color: #fff;
         display: inline-block;
         width: 55%;
+        vertical-align: middle;
       }
       .icon {
         vertical-align: middle;
         width: 30px;
         height: 30px;
         display: inline-block;
-        line-height:30px;
       }
       .inputPlaceholder {
         color: #fff;
@@ -124,6 +113,13 @@ export default class ResumeIndex extends Vue {
         background-color: #2196F3;
       }
     }
+  }
+  /deep/ .powerByContainer{
+    position: fixed;
+    width: 100%;
+    bottom: 10px;
+    box-sizing: border-box;
+
   }
 }
 </style>

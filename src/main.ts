@@ -60,8 +60,12 @@ const page = [
   {
     url: '/templateList',
     component: '/pages/common/templateList'
+  },
+  // 我的简历
+  {
+    url: '/myCV',
+    component: '/pages/my/myCV'
   }
-
 ]
 CainRouter.formatePages(page)
 
@@ -69,6 +73,7 @@ export default {
   config: {
     // pages 的首个页面会被编译成首页
     pages: [
+      'pages/my/myCV', // 我的简历
       'pages/index', // 主页
       'pages/common/templateList', // 简历模板列表
       'pages/common/about', // 关于

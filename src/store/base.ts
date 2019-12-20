@@ -1,7 +1,11 @@
+import MyCV from '@/model/dto/MyCV'
+
 // root state object.
 // each Vuex instance is just a single state tree.
 const state = {
-  staticUrl: ''
+  staticUrl: '',
+  avatarUrl: '',
+  myCVInfo: new MyCV()
 }
 
 // mutations are operations that actually mutates the state.
@@ -12,6 +16,12 @@ const state = {
 const mutations = {
   setStaticUrl (state, url) {
     state.staticUrl = url
+  },
+  setAvatarUrl (state, url) {
+    state.avatarUrl = url
+  },
+  setMyCVInfo (state, payload) {
+    state.myCVInfo = payload
   }
   // increment (state) {
   //   state.count++

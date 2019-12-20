@@ -26,10 +26,12 @@ Component.registerHooks([
 } as any)
 class App extends Vue {
   @base.Mutation('setStaticUrl') setStaticUrl
+  @base.Mutation('setAvatarUrl') setAvatarUrl
 
   onLaunch (options) {
     // 设置静态资源URL信息
     this.setStaticUrl(process.env.VUE_APP_STATIC_HOST)
+    this.setAvatarUrl(process.env.VUE_APP_AVATAR_HOST)
     // Do something initial when launch.
     console.log(
       'App onLaunch, env文件自定义的环境变量VUE_APP_TEST值:',

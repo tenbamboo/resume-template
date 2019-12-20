@@ -5,6 +5,7 @@ import ResumeService from '@/model/service/ResumeService'
 export default class BaseInfoMixins extends Vue {
     baseInfo: any = {};
     resumeService:ResumeService = new ResumeService();
+    homeBtnAnimating:Boolean = false
 
     async getData () {
       this.baseInfo = await this.resumeService.getResumeByName(this.$mp.query.name)

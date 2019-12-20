@@ -40,6 +40,8 @@
 
     <power-by v-if="baseInfo.baseInfo" />
 
+    <home-btn type="black" />
+
   </div>
 </template>
 
@@ -63,6 +65,7 @@ import StarList from './components/starList.vue'
 import ContactList from './components/contactList.vue'
 import Thanks from './components/thanks.vue'
 import PowerBy from '@/components/powerBy.vue'
+import HomeBtn from '@/components/homeBtn.vue'
 import BaseInfoMixins from '@/pages/resume/mixins/baseInfoMixins.ts'
 
 import { Vue, Component, Mixins } from 'vue-property-decorator'
@@ -77,6 +80,7 @@ import { Vue, Component, Mixins } from 'vue-property-decorator'
     StarList,
     ContactList,
     Thanks,
+    HomeBtn,
     PowerBy
   }
 })

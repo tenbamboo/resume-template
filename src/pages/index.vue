@@ -21,6 +21,7 @@
       </div>
     </div>
     <power-by />
+    <home-btn type="white" />
   </div>
 </template>
 <config>
@@ -39,6 +40,7 @@ import Cain from '@cain'
 
 import SkyFullOfStars from '@/components/skyFullOfStars.vue'
 import PowerBy from '@/components/powerBy.vue'
+import HomeBtn from '@/components/homeBtn.vue'
 import ResumeService from '@/model/service/ResumeService'
 import ResumeMap from '@/model/dto/ResumeMap'
 const base = namespace('base')
@@ -46,7 +48,8 @@ const base = namespace('base')
 @Component({
   components: {
     SkyFullOfStars,
-    PowerBy
+    PowerBy,
+    HomeBtn
   }
 })
 export default class ResumeIndex extends Vue {
@@ -119,7 +122,9 @@ export default class ResumeIndex extends Vue {
     width: 100%;
     bottom: 10px;
     box-sizing: border-box;
-
+    .link{
+      color:#fff;
+    }
   }
 }
 </style>

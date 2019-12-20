@@ -1,6 +1,6 @@
 <template>
   <div class="bannerContainer">
-    <img :src="`${staticUrl}orginOne/head.jpg`"
+    <img :src="avatarUrl+baseInfo.avatar"
       class="head " />
     <div class="info ">
       <p class="titleResume">RESUME</p>
@@ -23,6 +23,7 @@ const base = namespace('base')
 export default class Banner extends Vue {
   @Prop(Object) baseInfo;
   @base.State('staticUrl') staticUrl;
+  @base.State('avatarUrl') avatarUrl;
 }
 </script>
 

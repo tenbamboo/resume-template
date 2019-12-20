@@ -184,66 +184,66 @@ export default {
   //   date = date.replace(/-/g, '/')
   //   return new Date(date)
   // },
-  // /**
-  //          * @public
-  //          * @function
-  //          * @todo 对日期进行格式化
-  //          * @memberof Cain
-  //          * @param {Date} date 要格式化的日期
-  //          * @param {String} format 进行格式化的模式字符串
-  //          *     支持的模式字母有：
-  //          *     y:年,
-  //          *     M:年中的月份(1-12),
-  //          *     d:月份中的天(1-31),
-  //          *     h:小时(0-23),
-  //          *     m:分(0-59),
-  //          *     s:秒(0-59),
-  //          *     S:毫秒(0-999),
-  //          *     q:季度(1-4)
-  //          */
-  // formatDate: function (date, format) {
-  //   if (this.isBlank(date)) {
-  //     date = new Date()
-  //   }
-  //   if (this.isBlank(format)) {
-  //     format = 'yyyy-MM-dd hh:mm:ss'
-  //   }
+  /**
+           * @public
+           * @function
+           * @todo 对日期进行格式化
+           * @memberof Cain
+           * @param {Date} date 要格式化的日期
+           * @param {String} format 进行格式化的模式字符串
+           *     支持的模式字母有：
+           *     y:年,
+           *     M:年中的月份(1-12),
+           *     d:月份中的天(1-31),
+           *     h:小时(0-23),
+           *     m:分(0-59),
+           *     s:秒(0-59),
+           *     S:毫秒(0-999),
+           *     q:季度(1-4)
+           */
+  formatDate: function (date, format) {
+    if (this.isBlank(date)) {
+      date = new Date()
+    }
+    if (this.isBlank(format)) {
+      format = 'yyyy-MM-dd hh:mm:ss'
+    }
 
-  //   if (typeof date === 'string') {
-  //     if (date.substring(0, date.lastIndexOf('.')) !== '') {
-  //       date = date.substring(0, date.lastIndexOf('.'))
-  //     }
-  //     date = date.replace(/-/g, '/')
-  //   }
+    if (typeof date === 'string') {
+      if (date.substring(0, date.lastIndexOf('.')) !== '') {
+        date = date.substring(0, date.lastIndexOf('.'))
+      }
+      date = date.replace(/-/g, '/')
+    }
 
-  //   date = new Date(date)
-  //   var map = {
-  //     M: date.getMonth() + 1, // 月份
-  //     d: date.getDate(), // 日
-  //     h: date.getHours(), // 小时
-  //     m: date.getMinutes(), // 分
-  //     s: date.getSeconds(), // 秒
-  //     q: Math.floor((date.getMonth() + 3) / 3), // 季度
-  //     S: date.getMilliseconds() // 毫秒
-  //   }
-  //   format = format.replace(/([yMdhmsqS])+/g, function (all, t) {
-  //     var v = map[t]
-  //     if (v !== undefined) {
-  //       if (all.length > 1) {
-  //         v = '0' + v
-  //         v = v.substr(v.length - 2)
-  //       }
+    date = new Date(date)
+    var map = {
+      M: date.getMonth() + 1, // 月份
+      d: date.getDate(), // 日
+      h: date.getHours(), // 小时
+      m: date.getMinutes(), // 分
+      s: date.getSeconds(), // 秒
+      q: Math.floor((date.getMonth() + 3) / 3), // 季度
+      S: date.getMilliseconds() // 毫秒
+    }
+    format = format.replace(/([yMdhmsqS])+/g, function (all, t) {
+      var v = map[t]
+      if (v !== undefined) {
+        if (all.length > 1) {
+          v = '0' + v
+          v = v.substr(v.length - 2)
+        }
 
-  //       return v
-  //     } else if (t === 'y') {
-  //       return (date.getFullYear() + '').substr(4 - all.length)
-  //     }
+        return v
+      } else if (t === 'y') {
+        return (date.getFullYear() + '').substr(4 - all.length)
+      }
 
-  //     return all
-  //   })
+      return all
+    })
 
-  //   return format
-  // },
+    return format
+  },
   // /**
   //     * @public
   //     * @function
@@ -282,25 +282,25 @@ export default {
   //   a.setSeconds(59)
   //   return this.formatDate(a.getTime(), 'yyyy-MM-dd hh:mm:ss')
   // },
-  // /**
-  //          * @public
-  //          * @function
-  //          * @todo 判断是否为空
-  //          * @memberof Cain
-  //          * @param {Object} obj 需要校验对象
-  //          */
-  // isBlank: function (obj) {
-  //   if (typeof obj === 'undefined' || obj === undefined || obj == null || obj === 'null' || obj === 'undefined' || obj === '' || obj.length === 0) {
-  //     return true
-  //   } else if (typeof obj === 'object' && obj.length === undefined) {
-  //     for (var name in obj) {
-  //       return false
-  //     }
-  //     return true
-  //   } else {
-  //     return false
-  //   }
-  // },
+  /**
+           * @public
+           * @function
+           * @todo 判断是否为空
+           * @memberof Cain
+           * @param {Object} obj 需要校验对象
+           */
+  isBlank: function (obj) {
+    if (typeof obj === 'undefined' || obj === undefined || obj == null || obj === 'null' || obj === 'undefined' || obj === '' || obj.length === 0) {
+      return true
+    } else if (typeof obj === 'object' && obj.length === undefined) {
+      for (var name in obj) {
+        return false
+      }
+      return true
+    } else {
+      return false
+    }
+  },
   // /**
   //          * @public
   //          * @function
@@ -406,56 +406,56 @@ export default {
 
     return (random4() + random4() + '-' + random4() + '-' + random4() + '-' + random4() + '-' + random4() + random4() + random4())
   },
-  // /**
-  //      * @public
-  //      * @function
-  //      * @todo 生日转换为年龄
-  //      * @memberof Cain
-  //      * @param {String} birthday 日期格式为"2000-01-01"
-  //      */
-  // brithdayConAges: function (strBirthday) {
-  //   if (!strBirthday) {
-  //     return 0
-  //   }
-  //   strBirthday = this.formatDate(strBirthday, 'yyyy-MM-dd')
+  /**
+       * @public
+       * @function
+       * @todo 生日转换为年龄
+       * @memberof Cain
+       * @param {String} birthday 日期格式为"2000-01-01"
+       */
+  brithdayConAges: function (strBirthday) {
+    if (!strBirthday) {
+      return 0
+    }
+    strBirthday = this.formatDate(strBirthday, 'yyyy-MM-dd')
 
-  //   var returnAge
-  //   var strBirthdayArr = strBirthday.split('-')
-  //   var birthYear = strBirthdayArr[0]
-  //   var birthMonth = strBirthdayArr[1]
-  //   var birthDay = strBirthdayArr[2]
-  //   var d = new Date()
-  //   var nowYear = d.getFullYear()
-  //   var nowMonth = d.getMonth() + 1
-  //   var nowDay = d.getDate()
+    var returnAge
+    var strBirthdayArr = strBirthday.split('-')
+    var birthYear = strBirthdayArr[0]
+    var birthMonth = strBirthdayArr[1]
+    var birthDay = strBirthdayArr[2]
+    var d = new Date()
+    var nowYear = d.getFullYear()
+    var nowMonth = d.getMonth() + 1
+    var nowDay = d.getDate()
 
-  //   if (nowYear === birthYear) {
-  //     returnAge = 0 // 同年 则为0岁
-  //   } else {
-  //     var ageDiff = nowYear - birthYear // 年之差
-  //     if (ageDiff > 0) {
-  //       if (nowMonth === birthMonth) {
-  //         var dayDiff = nowDay - birthDay // 日之差
-  //         if (dayDiff < 0) {
-  //           returnAge = ageDiff - 1
-  //         } else {
-  //           returnAge = ageDiff
-  //         }
-  //       } else {
-  //         var monthDiff = nowMonth - birthMonth // 月之差
-  //         if (monthDiff < 0) {
-  //           returnAge = ageDiff - 1
-  //         } else {
-  //           returnAge = ageDiff
-  //         }
-  //       }
-  //     } else {
-  //       returnAge = -1 // 返回-1 表示出生日期输入错误 晚于今天
-  //     }
-  //   }
+    if (nowYear === birthYear) {
+      returnAge = 0 // 同年 则为0岁
+    } else {
+      var ageDiff = nowYear - birthYear // 年之差
+      if (ageDiff > 0) {
+        if (nowMonth === birthMonth) {
+          var dayDiff = nowDay - birthDay // 日之差
+          if (dayDiff < 0) {
+            returnAge = ageDiff - 1
+          } else {
+            returnAge = ageDiff
+          }
+        } else {
+          var monthDiff = nowMonth - birthMonth // 月之差
+          if (monthDiff < 0) {
+            returnAge = ageDiff - 1
+          } else {
+            returnAge = ageDiff
+          }
+        }
+      } else {
+        returnAge = -1 // 返回-1 表示出生日期输入错误 晚于今天
+      }
+    }
 
-  //   return returnAge // 返回周岁年龄
-  // },
+    return returnAge // 返回周岁年龄
+  },
   // /**
   //  * @function getRowID
   //  * @memberof Cain

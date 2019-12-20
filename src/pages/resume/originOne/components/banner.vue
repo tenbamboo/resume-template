@@ -1,6 +1,6 @@
 <template>
   <div class="bannerContainer">
-    <img :src="avatarHost+baseInfo.avatar"
+    <img :src="avatarUrl+baseInfo.avatar"
       class="head " />
     <div class="info ">
       <p class="titleResume">RESUME</p>
@@ -20,9 +20,10 @@ const base = namespace('base')
 
 @Component
 export default class Banner extends Vue {
-  avatarHost= process.env.VUE_APP_AVATAR_HOST
+  // avatarHost= process.env.VUE_APP_AVATAR_HOST
   @Prop(Object) baseInfo;
   @base.State('staticUrl') staticUrl;
+  @base.State('avatarUrl') avatarUrl;
 }
 </script>
 

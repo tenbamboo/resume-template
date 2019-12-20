@@ -1,3 +1,4 @@
+import Cain from '@cain'
 
 // 工作年限计算
 export function workAgeFilter (year) {
@@ -10,4 +11,7 @@ export function workAgeFilter (year) {
     return res + '年'
   }
   return '暂无'
+}
+export function ageFilter (birthday) {
+  return Cain.brithdayConAges(birthday) + '岁'
 }

@@ -758,6 +758,42 @@ export default {
       })
     })
   },
+  /**
+       * @public
+       * @function
+       * @todo 同axios.post方法 For wx
+       * @memberof Cain
+       * @param {Object} param 参数
+       * @param {String} url 请求的url
+       */
+  get (url, data = {}) {
+    return new Promise((resolve, reject) => {
+      // let header = {
+      //   'content-type': 'application/json'
+      // }
+      // let self = this
+      // console.log('req:' + url, data)
+      //
+      wx.request({
+        url: process.env.VUE_APP_SERVICE_HOST + url,
+        data,
+        // header,
+        method: 'GET',
+        success (res) {
+          // console.log('res:' + url, res)
+          // if (res.data.errorCode === '0' || res.data.errorCode === 0 || res.data.errorCode === '200001') {
+          resolve(res.data)
+          // } else {
+          // self.showToastE(res.data.errorMsg)
+          // return Promise.reject(res.data)
+          // }
+        },
+        fail (data) {
+          reject(data)
+        }
+      })
+    })
+  },
 
   // /**
   //  * @public

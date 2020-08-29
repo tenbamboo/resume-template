@@ -12,7 +12,7 @@ class MyService {
   // 通过resumecode对应信息
   getCVInfoByUserId (userId: string) {
     console.log(userId)
-    return Cain.post(`service/resume/damao.json`)
+    return Cain.get(`service/resume/damao.json`)
     // return new Promise(async (resolve, reject) => {
     //   if (!userId) {
     //     resolve(undefined)

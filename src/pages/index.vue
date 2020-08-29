@@ -21,7 +21,7 @@
       </div>
     </div>
     <power-by />
-    <home-btn type="white" />
+    <!-- <home-btn type="white" /> -->
   </div>
 </template>
 <config>

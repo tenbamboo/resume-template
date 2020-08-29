@@ -33,8 +33,8 @@ const page = [
   // 简历跳转主页
   {
     url: '/resume/index',
-    component: '/pages/resume/index',
-    indexPage: true
+    component: '/pages/resume/index'
+
   },
   // summer简历主页
   {
@@ -49,7 +49,8 @@ const page = [
   // 主页
   {
     url: '/index',
-    component: '/pages/index'
+    component: '/pages/index',
+    indexPage: true
   },
   // 关于
   {
@@ -73,8 +74,8 @@ export default {
   config: {
     // pages 的首个页面会被编译成首页
     pages: [
-      'pages/my/myCV', // 我的简历
       'pages/index', // 主页
+      'pages/my/myCV', // 我的简历
       'pages/common/templateList', // 简历模板列表
       'pages/common/about', // 关于
       'pages/resume/index', // 简历跳转主页

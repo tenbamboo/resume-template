@@ -16,17 +16,17 @@ class ResumeService {
         resolve(undefined)
         return
       }
-      const arrayRes:Array<ResumeMap> = await Cain.post(`service/resumeMap.json`) as Array<ResumeMap>
+      const arrayRes:Array<ResumeMap> = await Cain.get(`service/resumeMap.json`) as Array<ResumeMap>
       resolve(arrayRes.find(item => item.code === code))
     })
   }
   // 获取resume详情
   getResumeByName (name: string) {
-    return Cain.post(`service/resume/${name}.json`)
+    return Cain.get(`service/resume/${name}.json`)
   }
   // 获取模板列表信息
   getTemplateList () {
-    return Cain.post(`service/templateList.json`)
+    return Cain.get(`service/templateList.json`)
   }
 }
 

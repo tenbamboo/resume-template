@@ -40,7 +40,7 @@
 
     <power-by v-if="baseInfo.baseInfo" />
 
-    <home-btn type="black" />
+    <!-- <home-btn type="black" /> -->
 
   </div>
 </template>

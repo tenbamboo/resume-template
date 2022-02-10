@@ -31,7 +31,7 @@
     "@types/node": "^11.11.4",
     "eslint": "^5.15.3",
     "miniprogram-api-typings": "latest",
-    "node-sass": "^4.10.0",
+    "node-sass": "^7.0.0",
     "sass-loader": "^7.1.0",
     "typescript": "^3.4.4"
   },
